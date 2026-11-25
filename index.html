@@ -83,7 +83,6 @@
     </div>
     <div class="media" style="--cols:2;--ar:16/10">
       <img src="assets/work/character-system.jpg" alt="브랜드 캐릭터 시스템" loading="lazy">
-      <img src="assets/work/auto-product.jpg" alt="제품에서 캐릭터, 콘텐츠로" loading="lazy">
     </div>
   </article>
 </section>
@@ -179,7 +178,7 @@ cards.innerHTML=W.map(([f,c,t,d,k])=>`<a class="card rv" data-c="${c}" data-src=
  <div class="t"><span class="k">${K[c]}</span><div><b>${t}</b><span>${d}</span></div></div></a>`).join('');
 
 const idx=document.getElementById('idx');
-const I=["beauty-coast","sns-webtoon-1","beauty-pink","beauty-sun","sns-webtoon-3","beauty-island","beauty-travel","sns-guide","space-interior","sns-webtoon-2","beauty-peach","auto-product","beauty-perfume","web-kbeauty","web-landing-mobile","character-system"];
+const I=["beauty-coast","sns-webtoon-1","beauty-pink","beauty-sun","sns-webtoon-3","beauty-island","beauty-travel","sns-guide","space-interior","sns-webtoon-2","beauty-peach","beauty-perfume","web-kbeauty","web-landing-mobile","character-system"];
 const IT={"beauty-sun":"선셋 뷰티 캠페인","beauty-travel":"트래블 프래그런스","sns-webtoon-2":"인스타툰 — 핵심 공식","beauty-perfume":"향수 키비주얼","web-kbeauty":"K-Beauty 웹 비주얼","web-landing-mobile":"모바일 랜딩 시안","character-system":"브랜드 캐릭터 시스템","beauty-coast":"코스탈 뷰티 화보","shorts-hamster-1":"햄찌 골프 — 훅","sns-webtoon-1":"인스타툰 — 고민","beauty-pink":"클린 뷰티 제품컷","shorts-ai-1":"AI 컴필레이션 — 훅","web-jeju":"소상공인 해외 고객 캠페인","sns-webtoon-3":"인스타툰 — 실전 체크","beauty-island":"아일랜드 프래그런스","shorts-ai-3":"AI 컴필레이션 — 완성컷","sns-guide":"광고 표현 가이드 카드","space-interior":"공간·인테리어 비주얼","shorts-hamster-2":"햄찌 골프 — 캐릭터","beauty-peach":"피치 톤 브랜드 무드","shorts-ai-4":"AI 컴필레이션 — 엔딩","auto-product":"제품→캐릭터→콘텐츠","character-skin":"스킨케어 캐릭터"};
 idx.innerHTML=I.map(f=>`<a href="#" data-src="assets/work/${f}.jpg" data-k="i" data-t="${IT[f]}"><div class="m"><img src="assets/work/${f}.jpg" alt="${IT[f]}" loading="lazy"></div><p>${IT[f]}</p></a>`).join('');
 
@@ -189,7 +188,7 @@ const S=[
  ["광고","키비주얼, 제품 캠페인, 광고 소재",["메인 비주얼","제품컷","캠페인 시리즈","광고 소재 변형"],["beauty-perfume","beauty-sun","beauty-pink"]],
  ["SNS 관리","기획·제작·운영까지 월 단위 관리",["월간 기획","인스타툰·카드뉴스","릴스","운영·리포트"],["sns-webtoon-2","sns-webtoon-1","sns-guide"]],
  ["웹디자인","홈페이지, 랜딩페이지, 상세페이지",["회사 홈페이지","랜딩페이지","와디즈형 상세페이지"],["web-landing-mobile","web-kbeauty"]],
- ["자동화","콘텐츠 제작·업무 흐름을 시스템으로",["콘텐츠 파이프라인","대시보드","업무 자동화"],["auto-product"]],
+ ["자동화","콘텐츠 제작·업무 흐름을 시스템으로",["콘텐츠 파이프라인","대시보드","업무 자동화"],[]],
  ["영상 편집","촬영본·AI 영상 편집, 자막, 숏폼 재가공",["컷 편집","자막·모션","숏폼 리패키징","썸네일"],[],"video.html"]
 ];
 document.getElementById('svc').innerHTML=S.map(([h,d,ch,th,link],i)=>`<details ${i==0?'open':''}><summary><span class="n">0${i+1}</span><h3>${h}</h3><span class="d">${d}</span><span class="pl">+</span></summary>
