@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Background radial gradient -->
+    <radialGradient id="bgGrad" cx="42%" cy="42%" r="55%">
+      <stop offset="0%"   stop-color="#0d2540"/>
+      <stop offset="55%"  stop-color="#1c2830"/>
+      <stop offset="100%" stop-color="#202528"/>
+    </radialGradient>
+
+    <!-- Bar fill gradient (top-bright → bottom-dark blue) -->
+    <linearGradient id="barFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#33bbff"/>
+      <stop offset="35%"  stop-color="#0077ff"/>
+      <stop offset="100%" stop-color="#0033bb"/>
+    </linearGradient>
+
+    <!-- Inner top-shine highlight -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#99ddff" stop-opacity="0.75"/>
+      <stop offset="60%"  stop-color="#44aaff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0055aa" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Glow filter for bars & dots -->
+    <filter id="glowMed" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Strong glow for ambient bloom & sparkle -->
+    <filter id="glowStrong" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="22" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Sparkle glow -->
+    <filter id="sparkle" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="1024" height="1024" fill="url(#bgGrad)"/>
+
+  <!-- Ambient blue bloom (soft, behind everything) -->
+  <ellipse cx="430" cy="430" rx="310" ry="290" fill="#0033aa" opacity="0.30" filter="url(#glowStrong)"/>
+  <ellipse cx="760" cy="370" rx="140" ry="120" fill="#0044cc" opacity="0.15" filter="url(#glowStrong)"/>
+
+  <!-- ── OUTER GLOW LAYER (blurred copy, renders below crisp bars) ── -->
+  <g opacity="0.55" filter="url(#glowStrong)">
+    <rect x="192" y="260" width="634" height="38" rx="19" fill="#0066ff"/>
+    <rect x="217" y="311" width="577" height="36" rx="18" fill="#0066ff"/>
+    <rect x="257" y="359" width="490" height="35" rx="17" fill="#0066ff"/>
+    <rect x="300" y="406" width="396" height="33" rx="16" fill="#0066ff"/>
+    <rect x="338" y="450" width="316" height="32" rx="16" fill="#0066ff"/>
+    <rect x="370" y="493" width="257" height="30" rx="15" fill="#0066ff"/>
+    <rect x="396" y="534" width="201" height="29" rx="14" fill="#0066ff"/>
+    <rect x="413" y="573" width="169" height="27" rx="13" fill="#0066ff"/>
+    <rect x="424" y="611" width="148" height="26" rx="13" fill="#0066ff"/>
+    <rect x="434" y="648" width="130" height="25" rx="12" fill="#0066ff"/>
+    <rect x="443" y="684" width="114" height="24" rx="12" fill="#0066ff"/>
+    <rect x="451" y="720" width="100" height="24" rx="12" fill="#0066ff"/>
+    <!-- dots -->
+    <circle cx="849" cy="279" r="17" fill="#0066ff"/>
+    <circle cx="811" cy="329" r="15" fill="#0066ff"/>
+    <circle cx="764" cy="376" r="14" fill="#0066ff"/>
+    <circle cx="711" cy="422" r="13" fill="#0066ff"/>
+    <circle cx="664" cy="466" r="12" fill="#0066ff"/>
+    <circle cx="636" cy="508" r="12" fill="#0066ff"/>
+    <circle cx="607" cy="548" r="11" fill="#0066ff"/>
+    <circle cx="592" cy="586" r="10" fill="#0066ff"/>
+    <circle cx="582" cy="624" r="10" fill="#0066ff"/>
+    <circle cx="574" cy="660" r="9"  fill="#0066ff"/>
+    <circle cx="567" cy="696" r="9"  fill="#0066ff"/>
+    <circle cx="561" cy="732" r="9"  fill="#0066ff"/>
+  </g>
+
+  <!-- ── CRISP BARS with medium glow ── -->
+  <g filter="url(#glowMed)">
+    <rect x="192" y="260" width="634" height="38" rx="19" fill="url(#barFill)"/>
+    <rect x="217" y="311" width="577" height="36" rx="18" fill="url(#barFill)"/>
+    <rect x="257" y="359" width="490" height="35" rx="17" fill="url(#barFill)"/>
+    <rect x="300" y="406" width="396" height="33" rx="16" fill="url(#barFill)"/>
+    <rect x="338" y="450" width="316" height="32" rx="16" fill="url(#barFill)"/>
+    <rect x="370" y="493" width="257" height="30" rx="15" fill="url(#barFill)"/>
+    <rect x="396" y="534" width="201" height="29" rx="14" fill="url(#barFill)"/>
+    <rect x="413" y="573" width="169" height="27" rx="13" fill="url(#barFill)"/>
+    <rect x="424" y="611" width="148" height="26" rx="13" fill="url(#barFill)"/>
+    <rect x="434" y="648" width="130" height="25" rx="12" fill="url(#barFill)"/>
+    <rect x="443" y="684" width="114" height="24" rx="12" fill="url(#barFill)"/>
+    <rect x="451" y="720" width="100" height="24" rx="12" fill="url(#barFill)"/>
+
+    <!-- dots -->
+    <circle cx="849" cy="279" r="17" fill="url(#barFill)"/>
+    <circle cx="811" cy="329" r="15" fill="url(#barFill)"/>
+    <circle cx="764" cy="376" r="14" fill="url(#barFill)"/>
+    <circle cx="711" cy="422" r="13" fill="url(#barFill)"/>
+    <circle cx="664" cy="466" r="12" fill="url(#barFill)"/>
+    <circle cx="636" cy="508" r="12" fill="url(#barFill)"/>
+    <circle cx="607" cy="548" r="11" fill="url(#barFill)"/>
+    <circle cx="592" cy="586" r="10" fill="url(#barFill)"/>
+    <circle cx="582" cy="624" r="10" fill="url(#barFill)"/>
+    <circle cx="574" cy="660" r="9"  fill="url(#barFill)"/>
+    <circle cx="567" cy="696" r="9"  fill="url(#barFill)"/>
+    <circle cx="561" cy="732" r="9"  fill="url(#barFill)"/>
+  </g>
+
+  <!-- ── TOP SHINE HIGHLIGHTS on upper bars ── -->
+  <g opacity="0.65">
+    <rect x="192" y="260" width="634" height="16" rx="8"    fill="url(#shine)"/>
+    <rect x="217" y="311" width="577" height="15" rx="7.5"  fill="url(#shine)"/>
+    <rect x="257" y="359" width="490" height="14" rx="7"    fill="url(#shine)"/>
+    <rect x="300" y="406" width="396" height="13" rx="6.5"  fill="url(#shine)"/>
+    <rect x="338" y="450" width="316" height="12" rx="6"    fill="url(#shine)"/>
+    <rect x="370" y="493" width="257" height="12" rx="6"    fill="url(#shine)"/>
+    <rect x="396" y="534" width="201" height="11" rx="5.5"  fill="url(#shine)"/>
+  </g>
+
+  <!-- ── LENS FLARE 1 — top-left of first bar ── -->
+  <g filter="url(#sparkle)">
+    <g transform="translate(219,275)">
+      <circle r="6" fill="white" opacity="0.98"/>
+      <line x1="-32" x2="32"  stroke="white" stroke-width="2"   opacity="0.85"/>
+      <line y1="-32" y2="32"  stroke="white" stroke-width="2"   opacity="0.85"/>
+      <line x1="-22" y1="-22" x2="22" y2="22" stroke="white" stroke-width="1.5" opacity="0.55"/>
+      <line x1="22"  y1="-22" x2="-22" y2="22" stroke="white" stroke-width="1.5" opacity="0.55"/>
+    </g>
+  </g>
+
+  <!-- ── LENS FLARE 2 — right side, row-2 area ── -->
+  <g filter="url(#sparkle)">
+    <g transform="translate(796,337)">
+      <circle r="4" fill="white" opacity="0.92"/>
+      <line x1="-20" x2="20"  stroke="#bbddff" stroke-width="1.5" opacity="0.75"/>
+      <line y1="-20" y2="20"  stroke="#bbddff" stroke-width="1.5" opacity="0.75"/>
+      <line x1="-14" y1="-14" x2="14" y2="14" stroke="white" stroke-width="1"   opacity="0.45"/>
+      <line x1="14"  y1="-14" x2="-14" y2="14" stroke="white" stroke-width="1"   opacity="0.45"/>
+    </g>
+  </g>
+</svg>
